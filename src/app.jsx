@@ -6,9 +6,9 @@ import Lists from './components/lists';
 function App({delivery}) {
     const [list, setlist] = useState([]);
 
-    const searching = () => {
+    const searching = (city) => {
         delivery
-        .Search()
+        .Search(city)
         .then(result =>{
             setlist(result)
         });
