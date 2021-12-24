@@ -1,7 +1,8 @@
 
 import {useState} from 'react';
 import './app.css';
-import Lists from './components/lists';
+import Main from './components/main';
+import MkList from './components/mklist';
 
 function App({delivery}) {
     const [list, setlist] = useState([]);
@@ -15,10 +16,14 @@ function App({delivery}) {
     }
 
     return (
-        <Lists 
-        lists={list}
+        <>
+        <Main
         Click={searching} 
         />
+        <MkList 
+        lists={list}
+        />
+        </>
     )
 }
 

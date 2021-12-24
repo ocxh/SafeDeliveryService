@@ -1,22 +1,14 @@
-import React,{useRef} from 'react';
+import React from 'react';
 
-const Lists = ({lists, Click}) => {
-        const inputRef = useRef();
-        const handleSearch = (event) =>{
-            if(event.key === "Enter"){
-                const search_value = inputRef.current.value;
-                Click(search_value);
-            }
-
-        }
-        return(
-            <>
-            {console.log(lists)}
-            <input type="button" onClick={Click}/>
-            <input ref={inputRef} type="serch" onKeyPress={handleSearch}></input>
-            </>
-
-        ) 
+const Lists = ({list}) => {
+         return(
+             <div>
+                <h4>{list.fcltyNm}</h4>
+                <a>주소: {list.lnmadr}</a>
+                <p>연락처: {list.cstmrCnterPhoneNumber}</p>
+                <p>사용방법: {list.useRecovryMthDc}</p>
+             </div>
+         )
     };
 
 export default Lists;

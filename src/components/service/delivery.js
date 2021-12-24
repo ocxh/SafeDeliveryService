@@ -16,12 +16,12 @@ class Delivery{
             return fetch(`http://api.data.go.kr/openapi/tn_pubr_public_female_safety_hdrycstdyplace_api?pageNo=0&numOfRows=100&type=json&ctprvnNm=${city}&serviceKey=${this.key}`, 
             this.requestOptions)
             .then(response => response.json())
-            .then(result => result)
+            .then(result => result.response.body)
         }else{
             return fetch(`http://api.data.go.kr/openapi/tn_pubr_public_female_safety_hdrycstdyplace_api?pageNo=0&numOfRows=5&type=json&ctprvnNm=${city}&signguNm=${county}&serviceKey=${this.key}`, 
             this.requestOptions)
             .then(response => response.json())
-            .then(result => result)
+            .then(result => result.response.body)
         }
     };
 }
