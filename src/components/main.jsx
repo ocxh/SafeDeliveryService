@@ -1,5 +1,5 @@
 import React,{useRef} from 'react';
-
+import styles from './main.module.css';
 
 const Main = ({Click}) => {
     const inputRef = useRef();
@@ -12,9 +12,10 @@ const Main = ({Click}) => {
     }
     return(
         <>
-        <input ref={inputRef} type="serch" onKeyPress={handleSearch}></input>
+        <div className={styles.head}>
+            <input className={styles.searchBar} ref={inputRef} type="serch" onKeyPress={handleSearch}></input>
+        </div>
         </>
-
     ) 
     };
 
